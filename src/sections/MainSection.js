@@ -1,5 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import SideBar from "../components/SideBar";
+import DragQueenContainer from "../containers/DragQueenContainer";
 
 export default function MainSection() {
-  return <div>This is the main container</div>;
+  const [dragQueens, setDragQueens] = useState("");
+
+  useEffect(() => {
+    fetch("http://www.nokeynoshade.party/api/queens/all")
+      .then((resp) => resp.json())
+      .then((dragQueensAPI) => setDragQueens(dragQueensAPI));
+  }, []);
+  return (
+    <div>
+      <SideBar />
+      {dragQueens === "" ? (
+        <div> nada </div>
+      ) : (
+        <DragQueenContainer dragQueens={dragQueens} />
+      )}
+    </div>
+  );
 }
