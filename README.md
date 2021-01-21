@@ -1,48 +1,38 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# Styled Components
 
-## 🚀 Quick start
+## Why Styled Components?
 
-1.  **Create a Gatsby site.**
+Apart from helping you to scope styles, styled components include the following features:
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+1. **Automatic vendor prefixing**
+   You can use standard CSS properties, and styled components will add vendor prefixes should they be needed.
+2. **Unique class names**
+   Styled components are independent of each other, and you do not have to worry about their names because the library handles that for you.
+3. **Elimination of dead styles**
+   Styled components remove unused styles, even if they’re declared in your code.
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+## How to Install
 
-2.  **Start developing.**
+In your projects terminal, run this command:
 
-    Navigate into your new site’s directory and start it up.
+    npm i styled-components
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Then to add it to your component, you should add this line to your imports:
 
-3.  **Open the code and start customizing!**
+    import styled from "styled-components";
 
-    Your site is now running at http://localhost:8000!
+## Example
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+```
+  import styled from "styled-components";
 
-4.  **Learn more**
+  const StyledButton = styled.button`
+    background-color: black;
+    font-size: 32px;
+    color: white;
+  `;
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+  function Component() {
+    return <StyledButton> Login </StyledButton>;
+  }
+```
