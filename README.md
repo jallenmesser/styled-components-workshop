@@ -5,10 +5,15 @@
 Apart from helping you to scope styles, styled components include the following features:
 
 1. **Automatic vendor prefixing**
+
    You can use standard CSS properties, and styled components will add vendor prefixes should they be needed.
+
 2. **Unique class names**
+
    Styled components are independent of each other, and you do not have to worry about their names because the library handles that for you.
+
 3. **Elimination of dead styles**
+
    Styled components remove unused styles, even if they’re declared in your code.
 
 ## How to Install
