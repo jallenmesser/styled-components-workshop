@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SideBar from "../components/SideBar";
 import DragQueenContainer from "../containers/DragQueenContainer";
+import styled from "styled-components";
 
 export default function MainSection() {
   const [dragQueens, setDragQueens] = useState("");
@@ -10,14 +11,21 @@ export default function MainSection() {
       .then((resp) => resp.json())
       .then((dragQueensAPI) => setDragQueens(dragQueensAPI));
   }, []);
+
   return (
-    <div>
+    <Wrapper>
       <SideBar />
       {dragQueens === "" ? (
         <div> nada </div>
       ) : (
         <DragQueenContainer dragQueens={dragQueens} />
       )}
-    </div>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+`;
